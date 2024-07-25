@@ -75,9 +75,12 @@ const handleGenerateExercise = () => {
     ];
 
 
-    fetch('/api/chat',
+    fetch('http://209.38.188.205:3000/api/chat',
         {
             method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(chatContent.value),
         }
     )
@@ -134,15 +137,18 @@ const handleSend = () => {
 
     ];
 
-    fetch('/api/chat',
+    fetch('http://209.38.188.205:3000/api/chat',
         {
             method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(chatContent.value),
         }
     )
         .then((response) => {
             const reader = response.body?.getReader();
-            const decoder = new TextDecoder();            
+            const decoder = new TextDecoder();
 
             const read = () => {
                 reader?.read().then(({ done, value }) => {

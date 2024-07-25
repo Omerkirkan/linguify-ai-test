@@ -61,9 +61,12 @@ const handleSend = () => {
     });
 
 
-    fetch('/api/chat',
+    fetch('http://209.38.188.205:3000/api/chat',
         {
             method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(chatContent.value),
         }
     )
