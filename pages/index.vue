@@ -51,9 +51,6 @@
             <p> Please don't refresh the page </p>
         </div>
     </div>
-    <div>
-        <button @click="getDate()"> Get date </button>
-    </div>
 </template>
 <script lang="ts" setup>
 import type IChatContent from './models/IChatContent';
@@ -186,14 +183,6 @@ const handleDownloadChat = () => {
     element.download = 'chat.json';
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
-}
-
-const getDate = () => {
-    fetch('/api/test')
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        });
 }
 
 </script>
