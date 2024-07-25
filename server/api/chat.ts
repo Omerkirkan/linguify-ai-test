@@ -1,6 +1,4 @@
-import { Ollama } from 'ollama';
-
-const ollama = new Ollama({ host: 'http://209.38.188.205:11434/' })
+import ollama from 'ollama';
 
 export default eventHandler(async (event) => {
 
