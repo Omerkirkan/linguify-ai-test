@@ -55,6 +55,7 @@
 <script lang="ts" setup>
 import type IChatContent from './models/IChatContent';
 import context from '@/data/chat-1.json'
+const { apiUrl } = useRuntimeConfig().public;
 
 const chatContent = ref<IChatContent[]>([]);
 const prompt = ref('');
@@ -75,7 +76,7 @@ const handleGenerateExercise = () => {
     ];
 
 
-    fetch('http://209.38.188.205:3000/api/chat',
+    fetch( apiUrl + 'chat',
         {
             method: "post",
             headers: {
@@ -137,7 +138,7 @@ const handleSend = () => {
 
     ];
 
-    fetch('http://209.38.188.205:3000/api/chat',
+    fetch( apiUrl + 'chat',
         {
             method: "post",
             headers: {

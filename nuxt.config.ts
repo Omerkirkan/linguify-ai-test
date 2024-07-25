@@ -9,4 +9,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      apiUrl: 'http://209.38.188.205:3000/api/',
+    },
+  },
 })
